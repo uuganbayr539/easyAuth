@@ -11,11 +11,11 @@ class HomeController extends Controller
 {
     public function index(){
         $products = Post::all();
-        return view('posts.index')->with('products', $products);
+        // return view('posts.index')->with('products', $products);
         if(Auth::id()){
             $usertype = Auth()->user()->usertype;
             if($usertype=='user'){
-                return view('posts.show');  //dashboard
+                return view('posts.create');  //dashboard
             }
             else if ($usertype == 'admin') {
                 return view('admin.adminhome');

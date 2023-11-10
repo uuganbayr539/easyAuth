@@ -32,8 +32,22 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this ->validate($request, [
+            'name'=> 'required',
+            'description'=>'required',
+            'price'=>'required',
+            'stock_quantity'=>'required',
+        ]);
+        $post = new Post;
+        $post -> name = $request -> input('name');
+        $post -> description = $request -> input('description');
+        $post -> price = $request -> input('price');
+        $post -> stock_quantity = $request -> input('stock_quantity');
+        $post -> save();
+
+        return redirect('/posts')->with('success','Амжилттай нийтлэлээ');
     }
+    
 
     /**
      * Display the specified resource.
