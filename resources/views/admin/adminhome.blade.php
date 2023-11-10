@@ -1,4 +1,5 @@
-<x-app-layout>
+{{-- <x-app-layout> --}}
+  {{-- @extends('layouts.app') --}}
     <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -172,31 +173,16 @@
       
         <div class="main-panel">
           <div class="content-wrapper">
-            
-            <div class="row">
-              {{-- @include('admin.item') --}}
-            </div>
+            @yield('content')
+            {{-- @include('admin.item') --}}
             {{-- @include('admin.items') --}}
 
-           {{-- @include('admin.orderStatus') --}}
+            {{-- @include('admin.orderStatus') --}}
+            {{-- @include('admin.mesages') --}}              
+            {{-- @include('admin.portfolio') --}} 
+            {{-- @include('admin.todoList') --}}
+            {{-- @include('admin.visitors') --}}
 
-            <div class="row">
-              <div class="col-md-6 col-xl-4 grid-margin stretch-card">
-                @include('admin.mesages')
-              </div>
-              <div class="col-md-6 col-xl-4 grid-margin stretch-card">
-                @include('admin.portfolio')
-              </div>  
-              <div class="col-md-12 col-xl-4 grid-margin stretch-card">
-              @include('admin.todoList')
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                @include('admin.visitors')
-              </div>
-            </div>
-          </div>
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
@@ -234,4 +220,4 @@
     <!-- End custom js for this page -->
   </body>
 </html>    
-</x-app-layout>
+{{-- </x-app-layout>     --}}

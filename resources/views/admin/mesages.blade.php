@@ -1,4 +1,7 @@
-<div class="card">
+@extends('admin.adminhome')
+@section('content')
+<div class="col-md-6 col-xl-4 grid-margin stretch-card">
+    <div class="card">
                   <div class="card-body">
                     <div class="d-flex flex-row justify-content-between">
                       <h4 class="card-title">Messages</h4>
@@ -64,3 +67,5 @@
                     </div>
                   </div>
                 </div>
+                </div>
+@endsection

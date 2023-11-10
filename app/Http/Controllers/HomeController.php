@@ -18,7 +18,7 @@ class HomeController extends Controller
                 return view('posts.create');  //dashboard
             }
             else if ($usertype == 'admin') {
-                return view('admin.adminhome');
+                return view('admin.mesages');
             }
             else{
                 return redirect()->back();
