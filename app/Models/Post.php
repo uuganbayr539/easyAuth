@@ -13,4 +13,11 @@ class Post extends Model
     protected $primaryKey = 'id';
 
     public $timestamps = true;
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'location',
+        'cover_img',
+    ];
 }

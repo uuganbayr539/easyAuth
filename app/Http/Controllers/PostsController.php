@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+
 class PostsController extends Controller
 {
     /**
@@ -11,12 +12,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $products = Post::all(); // Assuming you have a "Post" model
-
-        // return view('products', compact('products'));
-        // return view('posts.index')->with('products', $products);
+        $products = Post::all();
         return view('posts.index')->with('products', $products);
-
     }
 
     /**
@@ -32,30 +29,45 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        $this ->validate($request, [
-            'name'=> 'required',
-            'description'=>'required',
-            'price'=>'required',
-            'stock_quantity'=>'required',
+        $this->validate($request, [
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'location' => 'required',
+            'cover_img' => 'image|nullable|max:1999',
         ]);
-        $post = new Post;
-        $post -> name = $request -> input('name');
-        $post -> description = $request -> input('description');
-        $post -> price = $request -> input('price');
-        $post -> stock_quantity = $request -> input('stock_quantity');
-        $post -> save();
 
-        return redirect('/posts')->with('success','Амжилттай нийтлэлээ');
+        $post = new Post();
+        $post->name = $request->input('name');
+        $post->description = $request->input('description');
+        $post->price = $request->input('price');
+        $post->location = $request->input('location');
+        $post->user_id = auth()->user()->id; // Assuming 'user_id' is the foreign key in your Post model
+       
+        // Handle cover image upload
+        if ($request->hasFile('cover_img')) {
+            $filenameWithExt = $request->file('cover_img')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('cover_img')->getClientOriginalExtension();
+            $filenameToStore = $filename.'_'.time().'.'.$extension;
+            $path = $request->file('cover_img')->storeAs('public/cover_img', $filenameToStore);
+            $post->cover_img = $filenameToStore;
+        } else {
+            $post->cover_img = 'noimg.jpg';
+        }
+
+        $post->save();
+
+        return redirect('/posts')->with('success', 'Амжилттай нийтлэлээ');
     }
-    
 
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        $products= Post::find($id);
-        return view('posts.show')->with('products', $products);
+        $product = Post::find($id);
+        return view('posts.show')->with('product', $product);
     }
 
     /**
@@ -63,7 +75,7 @@ class PostsController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // You can implement the edit logic here
     }
 
     /**
@@ -71,7 +83,7 @@ class PostsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // You can implement the update logic here
     }
 
     /**
@@ -79,6 +91,6 @@ class PostsController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // You can implement the delete logic here
     }
 }

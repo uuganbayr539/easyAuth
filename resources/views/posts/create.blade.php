@@ -28,42 +28,44 @@
     </style>
 </head>
 <body>
+    {{-- @extends('admin.adminhome')
+    @section('content') --}}
+        <div class="form-container">
+            <h1 class="text-center mb-4">Зар оруулах</h1>
 
-<div class="form-container">
-    <h1 class="text-center mb-4">Зар оруулах</h1>
+            {!! Form::open(['action' => 'App\Http\Controllers\PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+            
+                <div class="form-group">
+                    {{ Form::label('name', 'Барааны нэр') }}
+                    {{ Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Барааны нэр']) }}
+                </div>
 
-    {!! Form::open(['action' => 'App\Http\Controllers\PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
-    
-        <div class="form-group">
-            {{ Form::label('name', 'Барааны нэр') }}
-            {{ Form::text('name', '', ['class' => 'form-control', 'placeholder' => 'Барааны нэр']) }}
+                <div class="form-group">
+                    {{ Form::label('description', 'Тайлбар') }}
+                    {{ Form::textarea('description', '', ['class' => 'ckeditor form-control', 'placeholder' => 'Тайлбар']) }}
+                </div>
+
+                <div class="form-group">
+                    {{ Form::label('price', 'Үнэ') }}
+                    {{ Form::text('price', '', ['class' => 'form-control', 'placeholder' => 'Үнэ']) }}
+                </div>
+
+                <div class="form-group">
+                    {{ Form::label('location', 'Байршил') }}
+                    {{ Form::text('location', '', ['class' => 'form-control', 'placeholder' => 'Байршил']) }}
+                </div>
+
+                <div class="form-group">
+                    {{ Form::label('cover_img', 'Зураг') }}
+                    {{ Form::file('cover_img', ['class' => 'form-control-file']) }}
+                </div>
+
+                <br>
+
+                {{ Form::submit('Save Product', ['class' => 'btn btn-primary btn-block']) }}
+
+            {!! Form::close() !!}
         </div>
-
-        <div class="form-group">
-            {{ Form::label('description', 'Тайлбар') }}
-            {{ Form::textarea('description', '', ['class' => 'ckeditor form-control', 'placeholder' => 'Тайлбар']) }}
-        </div>
-
-        <div class="form-group">
-            {{ Form::label('price', 'Үнэ') }}
-            {{ Form::text('price', '', ['class' => 'form-control', 'placeholder' => 'Үнэ']) }}
-        </div>
-
-        <div class="form-group">
-            {{ Form::label('stock_quantity', 'Байршил') }}
-            {{ Form::text('stock_quantity', '', ['class' => 'form-control', 'placeholder' => 'Байршил']) }}
-        </div>
-
-        <div class="form-group">
-            {{ Form::label('cover_image', 'Зураг') }}
-            {{ Form::file('cover_image', ['class' => 'form-control-file']) }}
-        </div>
-
-        <br>
-
-        {{ Form::submit('Save Product', ['class' => 'btn btn-primary btn-block']) }}
-
-    {!! Form::close() !!}
-</div>
+    {{-- @endsection     --}}
 </body>
 </html>

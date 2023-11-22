@@ -9,6 +9,7 @@
         body {
             background-color: #f8f9fa;
             padding: 20px;
+            font-family: 'Arial', sans-serif;
         }
 
         .product-container {
@@ -27,15 +28,22 @@
         .product-title {
             font-size: 24px;
             margin-bottom: 10px;
+            color: #007bff;
         }
 
         .product-description,
         .product-price,
-        .product-quantity {
+        .product-location,
+        .product-created-at {
             font-size: 16px;
             color: #555;
             margin-bottom: 5px;
             display: block;
+        }
+
+        .product-created-at {
+            font-size: 12px;
+            color: #777;
         }
 
         .no-products {
@@ -47,25 +55,23 @@
     </style>
 </head>
 <body>
+    <div class="product-container">
 
-<div class="product-container">
+        <h1 class="text-center mb-4">Products</h1>
 
-    <h1 class="text-center mb-4">Products</h1>
-
-    @if (!empty($products))
-        @foreach ($products as $product)
+        @forelse ($products as $product)
             <div class="product-card">
                 <h3 class="product-title"><a href="/posts/{{$product->id}}">{{$product->name}}</a></h3>
+                <img style="width: 300px;" src="/storage/cover_img/{{$product->cover_img}}" alt="Product Image">
                 <p class="product-description">{{$product->description}}</p>
-                <p class="product-price">Price: ${{$product->price}}</p>
-                <p class="product-quantity">Stock Quantity: {{$product->stock_quantity}}</p>
+                <p class="product-price">Үнэ: ${{$product->price}}</p>
+                <p class="product-location">Хаяг: {{$product->location}}</p>
+                <p class="product-created-at">Нийтлэсэн өдөр: {{$product->created_at}}</p>
             </div>
-        @endforeach
-    @else
-        <p class="no-products">No Products Found</p>
-    @endif
+        @empty
+            <p class="no-products">No Products Found</p>
+        @endforelse
 
-</div>
-
+    </div>
 </body>
 </html>

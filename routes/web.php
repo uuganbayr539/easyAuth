@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\userController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ use App\Http\Controllers\PostsController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/users', [UserController::class, 'index']);
+
 
 // Route::get('/portfolio', function () {
 //     return view('admin.portfolio');
