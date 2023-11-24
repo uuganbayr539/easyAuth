@@ -3,17 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post;
-
-class PostsController extends Controller
+use App\Models\products;
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $products = Post::all();
-        return view('posts.index')->with('products', $products);
+        //
     }
 
     /**
@@ -21,7 +19,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('posts.create');
+        //
     }
 
     /**
@@ -33,16 +31,16 @@ class PostsController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'location' => 'required',
+            'quantity' => 'required',
             'cover_img' => 'image|nullable|max:1999',
         ]);
 
-        $post = new Post();
-        $post->name = $request->input('name');
-        $post->description = $request->input('description');
-        $post->price = $request->input('price');
-        $post->location = $request->input('location');
-        $post->user_id = auth()->user()->id; // Assuming 'user_id' is the foreign key in your Post model
+        $products = new products();
+        $products->name = $request->input('name');
+        $products->description = $request->input('description');
+        $products->price = $request->input('price');
+        $products->quantity = $request->input('quantity');
+        $products->user_id = auth()->user()->id; // Assuming 'user_id' is the foreign key in your Products model
        
         // Handle cover image upload
         if ($request->hasFile('cover_img')) {
@@ -51,14 +49,14 @@ class PostsController extends Controller
             $extension = $request->file('cover_img')->getClientOriginalExtension();
             $filenameToStore = $filename.'_'.time().'.'.$extension;
             $path = $request->file('cover_img')->storeAs('public/cover_img', $filenameToStore);
-            $post->cover_img = $filenameToStore;
+            $products->cover_img = $filenameToStore;
         } else {
-            $post->cover_img = 'noimg.jpg';
+            $products->cover_img = 'noimg.jpg';
         }
 
-        $post->save();
+        $products->save();
 
-        return redirect('/posts')->with('success', 'Амжилттай нийтлэлээ');
+        return redirect('/Save')->with('success', 'Амжилттай нийтлэлээ');
     }
 
     /**
@@ -66,9 +64,7 @@ class PostsController extends Controller
      */
     public function show(string $id)
     {
-        $product = Post::find($id);
-        // return view('posts.show')->with('product', $product);
-        return view('posts.show', compact('product'));
+        //
     }
 
     /**
@@ -76,7 +72,7 @@ class PostsController extends Controller
      */
     public function edit(string $id)
     {
-        // You can implement the edit logic here
+        //
     }
 
     /**
@@ -84,7 +80,7 @@ class PostsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // You can implement the update logic here
+        //
     }
 
     /**
@@ -92,6 +88,6 @@ class PostsController extends Controller
      */
     public function destroy(string $id)
     {
-        // You can implement the delete logic here
+        //
     }
 }

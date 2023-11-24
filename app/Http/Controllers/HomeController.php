@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;    
+use App\Models\products;    
 
 class HomeController extends Controller
 {
@@ -26,7 +27,13 @@ class HomeController extends Controller
         }
 
     }
-    public function post(){
-        return view("post");
+    public function Save(){
+        return view("shop/Save");
+    }
+    public function show(){
+        $productInformation = products::productInformationView()->get();
+
+        // Pass $productInformation to the view
+        return view('shop/show', compact('productInformation'));
     }
 }

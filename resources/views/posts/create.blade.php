@@ -62,7 +62,7 @@
 
                 <br>
 
-                {{ Form::submit('Save Product', ['class' => 'btn btn-primary btn-block']) }}
+                {{ Form::submit('Зар Оруулах', ['class' => 'btn btn-primary btn-block']) }}
 
             {!! Form::close() !!}
         </div>
