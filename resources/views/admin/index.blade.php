@@ -8,14 +8,14 @@
     <!-- Add your custom styles here -->
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: rgb(10, 33, 48);
         }
 
         .user-container {
             max-width: 600px;
             margin: 20px auto;
             padding: 10px;
-            background-color: #ffffff;
+            background-color: #3a3636;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             margin-top: 30px;
@@ -28,19 +28,14 @@
             border-radius: 3px;
         }
 
-        .user-name {
-            font-size: 1.2rem;
-            color: #007bff;
-        }
-
-        .user-email {
-            color: #6c757d;
-        }
-
-        .user-password,
+        .user-name,
+        .user-email,
+        /* .user-password, */
         .user-userType,
-        .user-created_at {
-            /* Add styles for these fields as needed */
+        .user-created_at
+         {
+            font-size: 1.2rem;
+            color: #868c92;
         }
 
         .no-users {

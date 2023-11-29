@@ -126,7 +126,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-contacts"></i>
               </span>
-              <span class="menu-title">Icons</span>
+              <span class="menu-title">Дэлгүүр</span>
             </a>
           </li>
           <li class="nav-item menu-items">
