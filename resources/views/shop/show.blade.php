@@ -9,7 +9,7 @@
     <style>
         /* Add your CSS styles here */
         body {
-            display: flex;
+            /* display: flex; */
             flex-wrap: wrap;
             justify-content: space-around;
         }
@@ -29,16 +29,18 @@
     </style>
 </head>
 <body>
+    @extends('admin.adminhome')
+    @section('content')
+        @foreach ($productInformation as $product)
+            <div class="product-card">
+                <h3>{{ $product->name }}</h3>
+                <p>{{ $product->description }}</p>
+                <p>Price: ${{ $product->price }}</p>
+                <p>Quantity: {{ $product->quantity }}</p>
+                <img class="product-image" src="/storage/cover_img/{{ $product->cover_img }}" alt="{{ $product->name }}">
+            </div>
+        @endforeach
 
-@foreach ($productInformation as $product)
-    <div class="product-card">
-        <h3>{{ $product->name }}</h3>
-        <p>{{ $product->description }}</p>
-        <p>Price: ${{ $product->price }}</p>
-        <p>Quantity: {{ $product->quantity }}</p>
-        <img class="product-image" src="/storage/cover_img/{{ $product->cover_img }}" alt="{{ $product->name }}">
-    </div>
-@endforeach
-
+    @endsection
 </body>
 </html>
