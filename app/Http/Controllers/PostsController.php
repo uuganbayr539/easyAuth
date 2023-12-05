@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
 
 class PostsController extends Controller
 {
@@ -37,12 +38,12 @@ class PostsController extends Controller
             'cover_img' => 'image|nullable|max:1999',
         ]);
 
-        $post = new Post();
-        $post->name = $request->input('name');
-        $post->description = $request->input('description');
-        $post->price = $request->input('price');
-        $post->location = $request->input('location');
-        $post->user_id = auth()->user()->id; // Assuming 'user_id' is the foreign key in your Post model
+        $product = new Post();
+        $product->name = $request->input('name');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        $product->location = $request->input('location');
+        $product->user_id = auth()->user()->id; // Assuming 'user_id' is the foreign key in your Post model
        
         // Handle cover image upload
         if ($request->hasFile('cover_img')) {
@@ -51,12 +52,12 @@ class PostsController extends Controller
             $extension = $request->file('cover_img')->getClientOriginalExtension();
             $filenameToStore = $filename.'_'.time().'.'.$extension;
             $path = $request->file('cover_img')->storeAs('public/cover_img', $filenameToStore);
-            $post->cover_img = $filenameToStore;
+            $product->cover_img = $filenameToStore;
         } else {
-            $post->cover_img = 'noimg.jpg';
+            $product->cover_img = 'noimg.jpg';
         }
 
-        $post->save();
+        $product->save();
 
         return redirect('/posts')->with('success', 'Амжилттай нийтлэлээ');
     }
@@ -74,9 +75,16 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+     public function edit(string $id)
     {
-        // You can implement the edit logic here
+        $post = Post::find($id);
+
+        //check for correct user
+        if(auth()->user()->id !==$post->user_id){
+            return redirect('/posts')->with('error', 'Unauthorized Page');
+        }
+
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -84,7 +92,41 @@ class PostsController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // You can implement the update logic here
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required',
+            'cover_image' => 'image|nullable|max:1999'
+        ]);
+        
+        $post = Post::find($id);
+        // Handle File Upload
+         if ($request->hasFile('cover_image')) {
+            // Get file name with the extension
+            $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
+            // Get just the filename
+            $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+            // Get just the extension
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
+            // FileName to store
+            $fileNameToStore = $filename . '_' . time() . '.' . $extension;
+            // Upload Image
+            $path = $request->file('cover_image')->storeAs('public/cover_images', $fileNameToStore);
+
+             // Delete the previous cover image if it's not the default one
+            if ($post->cover_image !== 'noimage.jpg') {
+                Storage::delete('public/cover_images/' . $post->cover_image);
+            }
+
+            // Update the post with the new cover image
+            $post->cover_image = $fileNameToStore;
+        }
+
+        // Update other post attributes
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
+
+        return redirect('/posts')->with('success', 'Post Updated');
     }
 
     /**
@@ -92,6 +134,23 @@ class PostsController extends Controller
      */
     public function destroy(string $id)
     {
-        // You can implement the delete logic here
-    }
+        $product =Post::find($id);
+
+        //check for correct user
+        if(auth()->user()->id !==$product->user_id){
+            return redirect('/posts')->with('error', 'Unauthorized Page');
+        }
+        // Fetch the cover image before deleting
+        $coverImage = $product->cover_image;
+
+        // Delete the product
+        $product->delete();
+
+        // Delete the previous cover image if it's not the default one
+        if ($coverImage !== 'noimage.jpg') {
+            Storage::delete('public/cover_images/' . $coverImage);
+        }
+
+        return redirect('/posts')->with('success', 'Post Removed');
+        }
 }

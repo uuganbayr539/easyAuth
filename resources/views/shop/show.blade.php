@@ -9,12 +9,13 @@
     <style>
         /* Add your CSS styles here */
         body {
-            /* display: flex; */
-            flex-wrap: wrap;
-            justify-content: space-around;
+            display: flex;
+            flex-wrap: nowrap; /* Prevent wrapping onto the next line */
+            justify-content: space-between; /* Distribute items with space between them */
         }
 
         .product-card {
+            box-sizing: border-box;
             border: 1px solid #ccc;
             padding: 10px;
             margin-bottom: 10px;
@@ -26,6 +27,7 @@
             max-width: 100%;
             height: auto;
         }
+
     </style>
 </head>
 <body>

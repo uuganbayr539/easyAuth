@@ -69,16 +69,27 @@
 
 <div class="product-container">
 
-    <a href="/posts" class="btn btn-default back-btn">Back</a>
+    
 
     <div class="product-card">
+        <a href="/posts" class="btn btn-default back-btn">Back</a>
         <h1 class="product-title">{{$product->name}}</h1>
         <img class="product-img" src="/storage/cover_img/{{$product->cover_img}}" alt="Product Image">
         <p class="product-description">{{$product->description}}</p>
         <p class="product-price">Price: ${{$product->price}}</p>
         <p class="product-quantity">Stock Quantity: {{$product->stock_quantity}}</p>
         <!-- Add more product details as needed -->
+        @if (!Auth::guest())
+        @if(Auth::user()->id == $product->user_id)
+            {{-- <a href="/posts/{{ $product->id }}/edit" class="btn btn-default">Edit</a> --}}
+            {!!Form::open(['action' => ['PostsController@destroy', $product->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                {{Form::hidden('_method', 'DELETE')}}
+                {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+            {!!Form::close()!!}
+        @endif
+    @endif
     </div>
+    
 
 </div>
 

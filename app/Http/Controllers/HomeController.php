@@ -36,4 +36,11 @@ class HomeController extends Controller
         // Pass $productInformation to the view
         return view('shop/show', compact('productInformation'));
     }
+    public function showa(){
+        $productInformation = products::productInformationView()->get();
+
+        // Pass $productInformation to the view
+        return view('shop/show', compact('productInformation'));
+    }
+    
 }

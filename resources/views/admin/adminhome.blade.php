@@ -93,7 +93,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
-              <span class="menu-title">Бараа</span>
+              <span class="menu-title">Зарууд</span>
             </a>
           </li>
           
@@ -110,7 +110,7 @@
               <span class="menu-icon">
                 <i class="mdi mdi-table-large"></i>
               </span>
-              <span class="menu-title">Tables</span>
+              <span class="menu-title">Бүртгэлтэй хэрэглэгчид</span>
             </a>
           </li>
           <li class="nav-item menu-items">

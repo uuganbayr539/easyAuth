@@ -41,4 +41,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::resource('posts', PostsController::class);
+Route::delete('/posts/{id}', 'PostsController@destroy')->name('posts.destroy');
+Route::get('/posts/{id}/edit', 'PostsController@edit')->name('posts.edit');
+
 Route::resource('product', ProductController::class);
