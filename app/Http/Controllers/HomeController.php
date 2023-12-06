@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\products;
+
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -25,6 +27,11 @@ class HomeController extends Controller
             }
         }
 
+    }
+    public function view()
+    {
+        $view = products::all();
+        return view('welcome.welcome')->with('view', $view);
     }
     
 }

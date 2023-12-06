@@ -23,7 +23,8 @@ Route::get('/', function () {//controller bolgoo
 });
 Route::get('/users', [UserController::class, 'index'])->middleware(['auth','admin']);
 
-Route::get('/home',[HomeController::class,'index'])->middleware('auth')->name('home'); //
+Route::get('/home',[HomeController::class,'index'])->middleware('auth')->name('home');
+Route::get('/view',[HomeController::class,'view']);
 // Route::get('/save',[HomeController::class,'save'])->middleware(['auth','admin']);
 // Route::get('/show',[HomeController::class,'show'])->middleware(['auth','admin']);
 
