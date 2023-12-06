@@ -1,208 +1,84 @@
-<!--featured-cars start -->
-		<section id="featured-cars" class="featured-cars">
-			<div class="container">
-				<div class="section-header">
-					<p>Түрээслэх машинууд тай танилцах</p>
-					<h2>Онцлох машинууд</h2>
-				</div><!--/.section-header-->
-				<div class="featured-cars-content">
-					<div class="row">
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="assets/images/featured-cars/fc1.png" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#">BMW 6-series gran coupe</a></h2>
-									<h3>$89,395</h3>
-									<p>
-										Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="assets/images/featured-cars/fc2.png" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#">chevrolet camaro <span>wmv20</span></a></h2>
-									<h3>$66,575</h3>
-									<p>
-										Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="assets/images/featured-cars/fc3.png" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#">lamborghini <span>v520</span></a></h2>
-									<h3>$125,250</h3>
-									<p>
-										Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="assets/images/featured-cars/fc4.png" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#">audi <span> a3</span> sedan</a></h2>
-									<h3>$95,500</h3>
-									<p>
-										Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="assets/images/featured-cars/fc4.png" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#">infiniti <span>z5</span></a></h2>
-									<h3>$36,850</h3>
-									<p>
-										Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="assets/images/featured-cars/fc5.png" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#">porsche <span>718</span> cayman</a></h2>
-									<h3>$48,500</h3>
-									<p>
-										Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="assets/images/featured-cars/fc7.png" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#"><span>bmw 8-</span>series coupe</a></h2>
-									<h3>$56,000</h3>
-									<p>
-										Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="assets/images/featured-cars/fc8.png" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#">BMW <span> x</span>series-6</a></h2>
-									<h3>$75,800</h3>
-									<p>
-										Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non. 
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div><!--/.container-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зарууд</title>
+    <link rel="shortcut icon" type="image/icon" href="{{ asset('assets/logo/icon.png') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+        }
 
-		</section><!--/.featured-cars-->
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .product-card {
+            background-color: #2a2828;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px; /* Adjust as needed */
+            width: 100%;
+        }
+
+        .product-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: rgb(92, 232, 27);
+        }
+
+        .product-description,
+        .product-price,
+        .product-location,
+        .product-created-at {
+            font-size: 16px;
+            color: #e3dbdb;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .product-created-at {
+            font-size: 12px;
+            color: #d7cdcd;
+        }
+
+        .no-products {
+            text-align: center;
+            font-size: 18px;
+            color: #e3dddd;
+            margin-top: 50px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center mb-4">Зарууд</h1>
+        <div class="product-container">
+            @forelse ($view as $product)
+                <div class="product-card">
+                    <h3 class="product-title"><a href="/{{$product->id}}">{{$product->name}}</a></h3>
+                    <img style="width: 100%;" src="/storage/cover_img/{{$product->cover_imgP}}" alt="Product Image">
+                    <p class="product-description">{{$product->description}}</p>
+                    <p class="product-price">Үнэ: ${{$product->price}}</p>
+                    <p class="product-quantity">Хаяг: {{$product->quantity}}</p>
+                    <p class="product-user-id">Хэрэглэгчийн дугаар: {{$product->user_id}}</p>
+                </div>
+            @empty
+                <p class="no-products">No Products Found</p>
+            @endforelse
+        </div>
+    </div>
+</body>
+
+</html>
+
