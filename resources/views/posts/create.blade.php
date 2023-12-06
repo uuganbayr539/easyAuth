@@ -4,26 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Information</title>
+    <title>Зар оруулах</title>
+	<link rel="shortcut icon" type="image/icon" href="{{ asset('assets/logo/icon.png') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- Include your CKEditor styles here if needed -->
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #000000;
             padding: 20px;
         }
 
         .form-container {
             max-width: 600px;
             margin: 0 auto;
-            background-color: #fff;
+            background-color: #dbb1b1;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(59, 52, 52, 0.1);
         }
 
         .form-group {
             margin-bottom: 20px;
+        }
+        .btn{
+            background-color: #000000
         }
     </style>
 </head>
@@ -31,7 +35,7 @@
     {{-- @extends('admin.adminhome')
     @section('content') --}}
         <div class="form-container">
-            <h1 class="text-center mb-4">Зар оруулах</h1>
+            <h1 class="text-center mb-4" >Зар оруулах</h1>
 
             {!! Form::open(['action' => 'App\Http\Controllers\PostsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
             

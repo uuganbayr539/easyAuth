@@ -1,6 +1,3 @@
-{{-- <x-app-layout> --}}
-	@extends('layouts.app')
-	@section('content')
     <!doctype html>
 <html class="no-js" lang="en">
 
@@ -16,61 +13,29 @@
 
 		    <link href="{{ asset('https://fonts.googleapis.com/css?family=Rufina:400,700') }}" rel="stylesheet">
 
-        
-        <!-- title of site -->
-        <title>CarVilla</title>
+        <title>Eazy Rent</title>
+		<link rel="shortcut icon" type="image/icon" href="{{ asset('assets/logo/icon.png') }}">
 
-        <!-- For favicon png -->
-		<link rel="shortcut icon" type="image/icon" href="{{ asset('assets/logo/favicon.png') }}">
-
-       
-        <!--font-awesome.min.css-->
         <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}">
 
-
-        <!--linear icon css-->
 		<link rel="stylesheet" href="{{ asset('assets/css/linearicons.css') }}">
 
-
-        <!--flaticon.css-->
-		{{-- <link rel="stylesheet" href={{assets("assets/css/flaticon.css")}}> --}}
         <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}">
 
-
-		<!--animate.css-->
         <link rel="stylesheet" href={{asset("assets/css/animate.css")}}>
 
-        <!--owl.carousel.css-->
         <link rel="stylesheet" href={{asset("assets/css/owl.carousel.min.css")}}>
 		<link rel="stylesheet" href={{asset("assets/css/owl.theme.default.min.css")}}>
 		
-        <!--bootstrap.min.css-->
         <link rel="stylesheet" href={{asset("assets/css/bootstrap.min.css")}}>
 		
-		<!-- bootsnav -->
 		<link rel="stylesheet" href={{asset("assets/css/bootsnav.css")}} >	
-    
-        <!--style.css-->
         <link rel="stylesheet" href={{asset("assets/css/style.css")}}>
-        
-        <!--responsive.css-->
         <link rel="stylesheet" href={{asset("assets/css/responsive.css")}}>
-        
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		
-        <!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
 
     </head>
 	
 	<body>
-		<!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-	
 		<!--welcome-hero start -->
 		<section id="home" class="welcome-hero">
 
@@ -95,7 +60,7 @@
 				            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 				                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
 				                    <li class="scroll"><a href="#service">Үйлчилгээ</a></li>
-				                    <li class="scroll"><a href="#featured-cars">Бараанууд</a></li>
+				                    <li class="scroll"><a href="#featured-cars">Оцлох машинууд</a></li>
 				                    <li class="scroll"><a href="#new-cars">Шинэ машинууд</a></li>
 				                    <li class="scroll"><a href="#brand">Гэрээт Байгууллагууд</a></li>
 				                    <li class="scroll"><a href="#contact">Холбогдох</a></li>
@@ -115,7 +80,7 @@
 				<div class="welcome-hero-txt">
 					<h2>Хүссэн зараа үнэ төлбөргүй оруулаарай</h2>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore   magna aliqua. 
+						Гэрээний нөхцөлэй танилцсан байх! 
 					</p>
 							@auth
 								<button class="welcome-btn" onclick="window.location.href='home'">Зар оруулах</button>
@@ -126,119 +91,7 @@
 				</div>
 			</div>
 
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="model-search-content">
-							<div class="row">
-								<div class="col-md-offset-1 col-md-2 col-sm-12">
-									<div class="single-model-search">
-										<h2>select year</h2>
-										<div class="model-select-icon">
-											<select class="form-control">
-
-											  	<option value="default">year</option><!-- /.option-->
-
-											  	<option value="2018">2018</option><!-- /.option-->
-
-											  	<option value="2017">2017</option><!-- /.option-->
-											  	<option value="2016">2016</option><!-- /.option-->
-
-											</select><!-- /.select-->
-										</div><!-- /.model-select-icon -->
-									</div>
-									<div class="single-model-search">
-										<h2>body style</h2>
-										<div class="model-select-icon">
-											<select class="form-control">
-
-											  	<option value="default">style</option><!-- /.option-->
-
-											  	<option value="sedan">sedan</option><!-- /.option-->
-
-											  	<option value="van">van</option><!-- /.option-->
-											  	<option value="roadster">roadster</option><!-- /.option-->
-
-											</select><!-- /.select-->
-										</div><!-- /.model-select-icon -->
-									</div>
-								</div>
-								<div class="col-md-offset-1 col-md-2 col-sm-12">
-									<div class="single-model-search">
-										<h2>select make</h2>
-										<div class="model-select-icon">
-											<select class="form-control">
-
-											  	<option value="default">make</option><!-- /.option-->
-
-											  	<option value="toyota">toyota</option><!-- /.option-->
-
-											  	<option value="holden">holden</option><!-- /.option-->
-											  	<option value="maecedes-benz">maecedes-benz.</option><!-- /.option-->
-
-											</select><!-- /.select-->
-										</div><!-- /.model-select-icon -->
-									</div>
-									<div class="single-model-search">
-										<h2>car condition</h2>
-										<div class="model-select-icon">
-											<select class="form-control">
-
-											  	<option value="default">condition</option><!-- /.option-->
-
-											  	<option value="something">something</option><!-- /.option-->
-
-											  	<option value="something">something</option><!-- /.option-->
-											  	<option value="something">something</option><!-- /.option-->
-
-											</select><!-- /.select-->
-										</div><!-- /.model-select-icon -->
-									</div>
-								</div>
-								<div class="col-md-offset-1 col-md-2 col-sm-12">
-									<div class="single-model-search">
-										<h2>select model</h2>
-										<div class="model-select-icon">
-											<select class="form-control">
-
-											  	<option value="default">model</option><!-- /.option-->
-
-											  	<option value="kia-rio">kia-rio</option><!-- /.option-->
-
-											  	<option value="mitsubishi">mitsubishi</option><!-- /.option-->
-											  	<option value="ford">ford</option><!-- /.option-->
-
-											</select><!-- /.select-->
-										</div><!-- /.model-select-icon -->
-									</div>
-									<div class="single-model-search">
-										<h2>select price</h2>
-										<div class="model-select-icon">
-											<select class="form-control">
-
-											  	<option value="default">price</option><!-- /.option-->
-
-											  	<option value="$0.00">$0.00</option><!-- /.option-->
-
-											  	<option value="$0.00">$0.00</option><!-- /.option-->
-											  	<option value="$0.00">$0.00</option><!-- /.option-->
-
-											</select><!-- /.select-->
-										</div><!-- /.model-select-icon -->
-									</div>
-								</div>
-								<div class="col-md-2 col-sm-12">
-									<div class="single-model-search text-center">
-										<button class="welcome-btn model-search-btn" onclick="window.location.href='#'">
-											search
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 
 		</section><!--/.welcome-hero-->
 		<!--welcome-hero end -->
@@ -253,9 +106,9 @@
 								<div class="single-service-icon">
 									<i class="flaticon-car"></i>
 								</div>
-								<h2><a href="#">largest dealership <span> of</span> car</a></h2>
+								<h2><a href="#">Бараа бүтээгдхүүн</a></h2>
 								<p>
-									Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut den fugit sed quia.  
+									Хамгийн хялбар хамгийн шуурхай үйлчилгээг үзүүлэх нь бидний давуу тал болно
 								</p>
 							</div>
 						</div>
@@ -264,9 +117,9 @@
 								<div class="single-service-icon">
 									<i class="flaticon-car-repair"></i>
 								</div>
-								<h2><a href="#">unlimited repair warrenty</a></h2>
+								<h2><a href="#">Засвар үйлчилгээ</a></h2>
 								<p>
-									Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut den fugit sed quia.  
+									Хамгийн хялбар хамгийн шуурхай үйлчилгээг үзүүлэх нь бидний давуу тал болно
 								</p>
 							</div>
 						</div>
@@ -275,9 +128,9 @@
 								<div class="single-service-icon">
 									<i class="flaticon-car-1"></i>
 								</div>
-								<h2><a href="#">insurence support</a></h2>
+								<h2><a href="#">Зээлийн нөхцөл</a></h2>
 								<p>
-									Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut den fugit sed quia. 
+									Хамгийн хялбар хамгийн шуурхай үйлчилгээг үзүүлэх нь бидний давуу тал болно
 								</p>
 							</div>
 						</div>
@@ -289,16 +142,10 @@
 		<!--service end-->
 
 		@include('welcome.newcars')
-
 		@include('welcome.cars')
-
 		@include('welcome.admins')
-
 		@include('welcome.brand')
-		<!--blog start -->
-		<section id="blog" class="blog"></section><!--/.blog-->
-		<!--blog end -->
-
+		<section id="blog" class="blog"></section>
 		@include('welcome.contact')
 
 
@@ -327,5 +174,3 @@
     </body>
 	
 </html>
-{{-- </x-app-layout> --}}
-	@endsection

@@ -11,6 +11,7 @@ use App\Models\products;
 class HomeController extends Controller
 {
     public function index(){
+        $users = User::all();
         $products = Post::all();
         // return view('posts.index')->with('products', $products);
         if(Auth::id()){
@@ -19,7 +20,8 @@ class HomeController extends Controller
                 return view('posts.create');  //dashboard
             }
             else if ($usertype == 'admin') {
-                return view('admin.mesages');
+                // return view('admin.mesages');
+                return view('admin.index', ['users' => $users]);
             }
             else{
                 return redirect()->back();
