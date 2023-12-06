@@ -60,6 +60,9 @@
     </style>
 </head>
 <body>
+    @extends('admin.adminhome')
+    @section('content')
+
     <div class="container">
         <h1 class="text-center mb-4">Зарууд</h1>
         <div class="product-container">
@@ -77,5 +80,7 @@
             @endforelse
         </div>
     </div>
+    @endsection
 </body>
+
 </html>
