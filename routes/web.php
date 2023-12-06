@@ -18,19 +18,14 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () {//controller bolgoo
     return view('welcome.welcome');
 });
-Route::get('/users', [UserController::class, 'index']);
-
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/users', [UserController::class, 'index'])->middleware(['auth','admin']);
 
 Route::get('/home',[HomeController::class,'index'])->middleware('auth')->name('home'); //
-Route::get('/Save',[HomeController::class,'Save'])->middleware(['auth','admin']);
-Route::get('/show',[HomeController::class,'show'])->middleware(['auth','admin']);
+// Route::get('/save',[HomeController::class,'save'])->middleware(['auth','admin']);
+// Route::get('/show',[HomeController::class,'show'])->middleware(['auth','admin']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -41,7 +36,5 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::resource('posts', PostsController::class);
-Route::delete('/posts/{id}', 'PostsController@destroy')->name('posts.destroy');
-Route::get('/posts/{id}/edit', 'PostsController@edit')->name('posts.edit');
 
-Route::resource('product', ProductController::class);
+Route::resource('product', ProductController::class)->middleware(['auth','admin']);

@@ -11,7 +11,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $productInformation = products::productInformationView()->get();
+        return view('shop.index', compact('productInformation')); 
     }
 
     /**
@@ -19,7 +20,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view("shop.create");
     }
 
     /**

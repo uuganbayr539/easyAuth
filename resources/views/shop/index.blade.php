@@ -1,5 +1,3 @@
-<!-- resources/views/show.blade.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +8,9 @@
     <style>
         /* Add your CSS styles here */
         body {
-            display: flex;
-            flex-wrap: nowrap; /* Prevent wrapping onto the next line */
-            justify-content: space-between; /* Distribute items with space between them */
+            /* display: flex; */
+            /* flex-wrap: nowrap; */
+            /* justify-content: space-between; */
         }
 
         .product-card {

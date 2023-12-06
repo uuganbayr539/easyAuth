@@ -32,8 +32,8 @@
     </style>
 </head>
 <body>
-    {{-- @extends('admin.adminhome')
-    @section('content') --}}
+    @extends('admin.adminhome')
+    @section('content')
         <div class="form-container">
             <h1 class="text-center mb-4" >Зар оруулах</h1>
 
@@ -70,6 +70,6 @@
 
             {!! Form::close() !!}
         </div>
-    {{-- @endsection     --}}
+    @endsection    
 </body>
 </html>
